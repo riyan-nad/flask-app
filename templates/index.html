@@ -1,20 +1,37 @@
 {% extends "layout.html" %}
-{% block page_title %}Welcome{% endblock %}
-{% block body %}
-    {{ super() }}
+{% block page_title %}DevOps Flask App{% endblock %}
 
-    <p>This is a minimal web app developed with <a href="http://flask.pocoo.org/">Flask</a> framework.</p>
-    <p>The main purpose is to introduce how to implement the essential elements in web applications with Flask, including</p>
-    <ul>
-        <li>URL Building</li>
-        <li>Authentication with Sessions</li>
-        <li>Template & Template Inheritance</li>
-        <li>Error Handling</li>
-        <li>Integrating with Bootstrap</li>
-        <li>Interaction with Database (SQLite)</li>
-        <li>Invoking static resources</li>
-        <li>Upload files</li>
+{% block body %}
+{{ super() }}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-5 fw-bold">🔧 DevOps-Powered Flask Web Application</h1>
+        <p class="lead">This project demonstrates the synergy between <strong>Flask</strong> and modern <strong>DevOps practices</strong>.</p>
+    </div>
+
+    <hr class="my-4">
+
+    <p class="mb-3">Key DevOps concepts implemented in this application include:</p>
+    <ul class="list-group list-group-flush mb-4">
+        <li class="list-group-item">🐳 Containerized with <strong>Docker</strong> for consistent environments</li>
+        <li class="list-group-item">🔁 <strong>CI/CD pipeline</strong> using <strong>GitHub Actions</strong> to automate builds and deployment</li>
+        <li class="list-group-item">📦 Image pushed to <strong>Docker Hub</strong> on every commit to <code>main</code></li>
+        <li class="list-group-item">🗃️ SQLite used as a lightweight database for demonstration</li>
+        <li class="list-group-item">💡 Production-ready Dockerfile using <code>python:3.11-slim</code></li>
+        <li class="list-group-item">🧪 Structured for future integration of testing and monitoring tools</li>
     </ul>
 
-    <p>For more basic knowledge of Flask, you can refer to <a href="https://www.tutorialspoint.com/flask/">a tutorial on Tutorialspoint</a>.</p>
+    <p>
+        Whether you're managing infrastructure or deploying apps, this project reflects real-world DevOps principles in a simple, understandable way.
+    </p>
+
+    <div class="alert alert-info mt-4" role="alert">
+        Curious about the setup? Explore the <code>Dockerfile</code>, <code>docker-compose.yml</code>, and <code>.github/workflows</code> directory to see how it all comes together.
+    </div>
+
+    <p class="text-muted small">
+        Learn more about DevOps best practices from the <a href="https://12factor.net/" target="_blank">12-Factor App methodology</a> and <a href="https://docs.docker.com/get-started/" target="_blank">Docker docs</a>.
+    </p>
+</div>
 {% endblock %}
