@@ -35,16 +35,16 @@ The app is containerized with Docker and automatically built and pushed to Docke
 
 ### 🧪 Run Locally (Without Docker)
 
-# Install dependencies
+### Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-# Run the app
+### Run the app
 ```bash
 python app.py
 ```
-# Open your browser and go to:
+### Open your browser and go to:
 http://localhost:5000
 
 ---
