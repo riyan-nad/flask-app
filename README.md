@@ -1,60 +1,74 @@
-# flask-example
+# 🐍 Flask Notes App with Docker & GitHub Actions
 
-A minimal web app developed with [Flask](http://flask.pocoo.org/) framework. 
+This is a simple Flask web application that allows users to:
 
-The main purpose is to introduce how to implement the essential elements in web application with Flask, including
+- Sign in with a username and password
+- Add and delete text notes
+- Upload and manage images
+- View user-specific content privately
 
-- URL Building
+The app is containerized with Docker and automatically built and pushed to Docker Hub using GitHub Actions.
 
-- Authentication with Sessions
+---
 
-- Template & Template Inheritance
+## 📦 Features
 
-- Error Handling
+- 🔐 User Authentication (Session-based)
+- 📝 Personal Note Taking
+- 🖼️ Image Upload & Management
+- 💾 SQLite Database (3 separate DBs for users, notes, images)
+- 📄 HTML Templates with Jinja2
+- 🐳 Dockerfile for easy containerization
+- ⚙️ CI/CD with GitHub Actions and DockerHub Integration
 
-- Integrating with *Bootstrap*
+---
 
-- Interaction with Database (SQLite)
+## 🚀 Getting Started
 
-- Invoking static resources
+### Prerequisites
 
-For more basic knowledge of Flask, you can refer to [a tutorial on Tutorialspoint](https://www.tutorialspoint.com/flask/).
+- Python 3.11+
+- Docker installed
+- Docker Hub account (for CI/CD)
 
+---
 
-## How to Run
+### 🧪 Run Locally (Without Docker)
 
-- Step 1: Make sure you have Python
+# Install dependencies
+```bash
+pip install -r requirements.txt
+```
 
-- Step 2: Install the requirements: `pip install -r requirements.txt`
+# Run the app
+```bash
+python app.py
+```
+# Open your browser and go to:
+http://localhost:5000
 
-- Step 3: Go to this app's directory and run `python app.py`
+---
 
+# 🐳 Run with Docker
+### Build the Docker image
+docker build -t flask-notes-app .
 
+### Run the container
+docker run -p 5000:5000 flask-notes-app
+Then open:
+http://localhost:5000
 
-## Details about This Toy App
+---
 
-There are three tabs in this toy app
+# 🛠️ CI/CD with GitHub Actions
+This project includes a GitHub Actions workflow that:
 
-- **Public**: this is a page which can be accessed by anyone, no matter if the user has logged in or not.
+Builds the Docker image on each push to main
 
-- **Private**: Only logged-in user can access this page. Otherwise the user will get a 401 error page.
+Pushes the image to your Docker Hub repository
 
-- **Admin Page**: This part is only open to the user who logged in as "Admin". In this tab, the administrator can manage accounts (list, delete, or add).
+Make sure to set the following secrets in your GitHub repo:
 
+DOCKERHUB_USERNAME
 
-A few accounts were set for testing, like ***admin*** (password: admin), ***test*** (password: 123456), etc. You can also delete or add accounts after you log in as ***admin***.
-
-
-
-## References
-
-- http://flask.pocoo.org/
-
-- https://www.tutorialspoint.com/flask/
-
-
-
-## Credict
-Image private.jpg: https://commons.wikimedia.org/wiki/File:(315-365)_Locked_(6149414678).jpg
-
-Image public.jpg: https://commons.wikimedia.org/wiki/File:Drown%3F!_(131380682).jpg
+DOCKERHUB_TOKEN
